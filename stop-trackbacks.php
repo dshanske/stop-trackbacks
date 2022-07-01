@@ -9,7 +9,7 @@
  */
 
 
-/* 
+/*
  * Any Time A Trackback is Received Return an Error.
  * @since 4.7.0
  */
@@ -33,4 +33,11 @@ function stop_trackbacks_remove_meta_box() {
 	remove_meta_box( 'trackbacksdiv', 'post', 'normal' );
 }
 
-add_action( 'admin_menu' , 'stop_trackbacks_remove_meta_box' );
+add_action( 'admin_menu', 'stop_trackbacks_remove_meta_box' );
+
+function stop_all_trackbacks_disable_xmlrpc_methods( $methods ) {
+	unset( $methods['mt.getTrackbackPings'] );
+	return $methods;
+}
+
+add_filter( 'xmlrpc_methods', 'stop_all_trackbacks_disable_xmlrpc_methods', 11 );

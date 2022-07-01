@@ -17,6 +17,7 @@ Once activated, this plugin:
 1. Disables the trackbox meta box
 1. Returns an error message to any receipt of a trackback
 1. For WordPress 5.6 or later, will disable the function that looks for whether there are trackbacks to send to avoid wasting resources.
+1. Disables XMLRPC function to get Trackbacks using the Movable Type API
 
 == Changelog ==
 
